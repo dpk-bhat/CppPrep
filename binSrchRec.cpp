@@ -10,7 +10,6 @@ void binSrch(int arr[], int low, int high, int key)
         return;
     }
     int mid = (low + high) / 2;
-    cout << mid << endl;
     if (low <= high)
     {
         if (arr[mid] == key)
@@ -42,5 +41,8 @@ int main()
     {
         arr[i] = i;
     }
-    binSrch(arr, 0, sizeof(arr) / sizeof(arr[0]), 102);
+    int key = -1;
+    cout << "Enter the key you want to search:" << endl;
+    cin >> key;
+    binSrch(arr, 0, sizeof(arr) / sizeof(arr[0]), key);
 }

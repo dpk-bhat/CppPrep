@@ -1,5 +1,7 @@
 #include <iostream> 
+// #include <chrono>
 using namespace std;
+// using namespace std::chrono;
 
 void heapify(int arr[], int n, int i)
 {
@@ -39,11 +41,28 @@ void printArray(int arr[], int n)
 
 int main()
 {
-    int arr[] ={ 12, 11, 13, 5, 6, 7 };
+    int arr[1000];
+    for (int i = 0; i < 1000; i++)
+    {
+        arr[i] = i;
+    }
+    for (int i = 999; i > 1; i--)
+    {
+        int randIndex = rand() % i;
+        int temp = arr[i];
+        arr[i] = arr[randIndex];
+        arr[randIndex] = temp;
+    }
+
+
     int n = sizeof(arr) / sizeof(arr[0]);
 
+    // auto start = high_resolution_clock::now();
     heapSort(arr, n);
+    // auto stop = high_resolution_clock::now();
 
     cout << "Sorted array is \n";
     printArray(arr, n);
+    // auto duration = duration_cast<microseconds>(stop - start);
+    // cout<<"Time taken by function "<<duration.count()<<" microseconds"<<endl;
 }

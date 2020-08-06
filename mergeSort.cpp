@@ -23,3 +23,19 @@ void printArr(int arr[], int n)
     }
     cout << endl;
 }
+
+int mergeSort(int arr[], int l, int h, int n)
+{
+    int mid = (l + h) / 2;
+}
+
+int main()
+{
+    int arr[100];
+    for (int i = 0; i < 100; i++)
+    {
+        arr[i] = i;
+    }
+    shuffle(arr, 100);
+    mergeSort(arr, 0, 100, 100);
+}

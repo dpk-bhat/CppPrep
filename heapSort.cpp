@@ -68,5 +68,5 @@ int main() {
 
     heapSort(arr, 100);
 
-    printArr(arr, 100)
+    printArr(arr, 100);
 }

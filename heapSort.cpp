@@ -12,7 +12,7 @@ void printArr(int arr[], int n) {
     cout<<endl;
 
 }
-// MaxHeapify: For array arr of size n, heapify with top down approach
+// MaxHeapify: For array arr of size n(heap size), heapify with top down approach
 /*  This function considers i as the root for the binary (sub)tree,
     and recursively converts its child sub trees to max heap */
 void heapify(int arr[], int n, int i) {
@@ -50,17 +50,17 @@ void heapSort(int arr[], int n) {
         heapify(arr, i, 0);
     }
 
-
 }
 
 int main() {
+
     int n = 20, arr[n];
     // arr[i] = i
     for (int i = 0; i < n; i++)
     {
         arr[i] = i;
     }
-    // Shuffling the Array
+    // Shuffling the Array Fisher Yates algo;
     for (int i = n-1; i > 1; i--)
     {
         int randIndex = rand() % i;
@@ -75,3 +75,5 @@ int main() {
     cout<<endl<<"After Heap Sort"<<endl<<endl;
     printArr(arr, n);
 }
+
+// 8762840329

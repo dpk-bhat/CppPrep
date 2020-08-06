@@ -3,12 +3,13 @@
 using namespace std;
 
 void printArr(int arr[], int n) {
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < n; i++)
     {
         cout<<arr[i]<<"\t";
         if ((i+1)%15==0)
             cout<<endl;
     }
+    cout<<endl;
 
 }
 // MaxHeapify: For array arr of size n, heapify with top down approach
@@ -16,8 +17,8 @@ void printArr(int arr[], int n) {
     and recursively converts its child sub trees to max heap */
 void heapify(int arr[], int n, int i) {
     int lar = i;
-    int l = 2*i;
-    int r = 2*i+1;
+    int l = 2*i+1;
+    int r = 2*i+2;
 
     if (l<n && arr[l] > arr[lar]) {
         lar = l;
@@ -26,6 +27,10 @@ void heapify(int arr[], int n, int i) {
         lar = r;
     }
     if (lar != i) {
+        int temp = arr[i];
+        arr[i] = arr[lar];
+        arr[lar] = temp;
+
         heapify(arr, n, lar);
     }
 }
@@ -42,21 +47,21 @@ void heapSort(int arr[], int n) {
         arr[i] = arr[0];
         arr[0] = temp;
 
-        heapify(arr, n, 0);
+        heapify(arr, i, 0);
     }
 
 
 }
 
 int main() {
-    int arr[100];
+    int n = 20, arr[n];
     // arr[i] = i
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < n; i++)
     {
         arr[i] = i;
     }
     // Shuffling the Array
-    for (int i = 99; i > 1; i--)
+    for (int i = n-1; i > 1; i--)
     {
         int randIndex = rand() % i;
         int temp = arr[randIndex];
@@ -64,9 +69,9 @@ int main() {
         arr[i] = temp;
     }
 
-    printArr(arr, 100);
+    printArr(arr, n);
 
-    heapSort(arr, 100);
-
-    printArr(arr, 100);
+    heapSort(arr, n);
+    cout<<endl<<"After Heap Sort"<<endl<<endl;
+    printArr(arr, n);
 }

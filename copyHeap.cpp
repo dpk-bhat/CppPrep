@@ -1,7 +1,7 @@
 #include <iostream> 
 // #include <chrono>
 using namespace std;
-// using namespace std::chrono;
+// usiong namespace std::chrono;
 
 void heapify(int arr[], int n, int i)
 {

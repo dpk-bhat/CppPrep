@@ -53,5 +53,4 @@ int main() {
     }
     dutchFlag(arr, n);
     printArr(arr, n);
-
 }

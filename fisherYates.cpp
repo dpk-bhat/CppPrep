@@ -20,7 +20,8 @@ void fisherYates(int arr[], int n)
 
 int main()
 {
-    int arr[100] = {0};
+    srand(time(NULL));
+    int arr[100] ={ 0 };
     for (int i = 0; i < 100; i++)
     {
         arr[i] = i;

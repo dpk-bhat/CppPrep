@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//Utility Function to print an array arr with size n;
 void printArr(int arr[], int n) {
     for (int i = 0; i < n; i++)
     {
@@ -37,12 +38,19 @@ void heapify(int arr[], int n, int i) {
 
 void heapSort(int arr[], int n) {
     // Convert the existing array into MaxHeap
+    // n/2 - 1 will give us last parent; We will compare it with its child and move up the tree(array)
     for (int i = (n/2) - 1; i >= 0; i--)
     {
         heapify(arr, n, i);
     }
+    /*
+    To sort the array, we will move the root element to the last index i.e. we are swapping the last node with the root.
+    We are resudcing the size of heap(i.e. i is decrementing)
+    That implies the largest element of the heap at the end of the array(index: n-1) for first iteration, 1nd largest at 2nd last postion(index: n-2) and so on...
+    */
     for (int i = n-1; i >=0; i--)
     {
+                
         int temp = arr[i];
         arr[i] = arr[0];
         arr[0] = temp;

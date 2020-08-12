@@ -17,10 +17,6 @@ Graph::Graph(int V)
 {
     this->V = V;
     adj = new list<int>[V];
-    for (auto it = adj.begin(); it < count; it++)
-    {
-        /* code */
-    }
 }
 
 void Graph::addEdge(int v, int w)
